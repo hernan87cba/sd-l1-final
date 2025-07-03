@@ -15,7 +15,7 @@ class PelisController {
   }
   async get(options?: Options): Promise<Peli[]> {
     let resultado = [];
-    if (Object.keys(options).length == 0) {
+    if (!options || Object.keys(options).length == 0) {
       //Si options llega vacío, devuelve el listado completo
       resultado = await this.model.getAll();
     } else {

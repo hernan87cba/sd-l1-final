@@ -12,7 +12,6 @@ function parseaParams(argv) {
 async function main() {
   const controller = new PelisController();
   const params = parseaParams(process.argv.slice(2));
-  console.log(params);
   if (!params._[0]) {
     const listadoPeliculas = await controller.get();
     console.table(listadoPeliculas);
